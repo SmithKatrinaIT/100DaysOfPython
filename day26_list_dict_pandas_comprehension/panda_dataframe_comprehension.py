@@ -1,36 +1,36 @@
-""" Concept: Dictionary Comprehension
-    -- Simplifies working with or creating dictionaries
-    -- NOTE: Dictionary Comprehension uses CURLY BRACKETS instead of square (like lists)
-    -- Syntax:
-        -- Example 1: new_dict = {new_key:new_value for item in list}
-            -- basic use: create a new dictionary from a list of key/value pairs
-        -- Example 2: new_dict = {new_key:new_value for (key, value) in dict.items()}
-            -- advance use - create a dictionary from values in an existing dictionary
-
-        -- Syntax
-            -- new_dict: is the dictionary to create
-            -- new_key: the key variable to save in the new dictionary
-            -- new_value: the value variable that correlates to the key variable to save in the new dictionary
-            -- for: keyword
-            -- item: variable of the item in the list being iterated over (this can be called any acceptable variable name)
-            -- (key, value): split the items in the dictionary to iterate over, into a key (variable) and value (variable) pair
-            -- in: keyword
-            -- list: the list to iterate over
-            -- dict.items(): all the items in the dictionary being iterated over
-    -- Syntax: conditional
-        -- new_dict = {new_key:new_value for item in list if test}
-        -- new_dict = {new_key:new_value for (key, value) in dict.items() if test}
-            -- new_key, new_value, (key, value), for, item, in, list, dict.items() are the same above
-            -- if: keyword
-            -- test: the conditional expression.
+""" Concept: Pandas Dataframe Comprehension
+    -- how to iterate of Panda Dataframes
+    -- Pandas have built-in methods to convert data to dictionaries and lists and more
+    --
 """
-import random
+import pandas
 
-# Dictionary Comprehension: create a new dictionary with names of students and their scores
-names = ["John", "Katrina", "Jace", "Kia", "Kemahni", "Dawn", "Angie", "Tasha", "Pete"]
-student_dict = {name: random.randint(1, 100) for name in names}
+student_dict = {
+    "students": ["Katrina", "John", "Zakia", "Jace", "Kemahni"],
+    "score": [56, 76, 98, 72, 80]
+}
+
+# Python native Looping of dictionaries
+for (key, value) in student_dict.items():
+    print(key)
+    print(value)
 
 
-passed_students = {student: score for (student, score) in student_dict.items() if score > 69}
-print(student_dict)
-print(passed_students)
+#Looping Pandas Dataframe - using Pandas loops
+student_dataframe = pandas.DataFrame(student_dict)
+
+#can loop using normal dictionary looping but the data may not be what you are expecting (due to table format of Dataframes)
+for (key, value) in student_dataframe.items():
+    print(key) # prints the column names (no problem)
+    print(value) # prints the indices and the column value as a row of data
+
+
+# looping the ROWS in the dataframe using Pandas looping method --> .iterrows()
+for (index, row) in student_dataframe.iterrows(): # get the row index, and the data in the row
+    print(index)
+    print(row) # Panda Series
+    print(row.students)
+    print(row.score)  # get the score in the iterated row
+
+
+
