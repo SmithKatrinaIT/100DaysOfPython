@@ -1,5 +1,18 @@
 """
     Concept: Creating GUIs using Tkinter to read and react to our Python code
+    -- This lesson extends the Password Manager project by introduction JSON
+    	--Javascript Object Notation
+    	-- Saving data in JSON format to better search and sort data in JSON file
+    	-- Using Python's built-in JSON library, we can read, write, and update JSON data/files
+    		-- To write: use json.dump() --> takes a dictionary, the file to write to, optionally - can specify the "indent=num" argument to pretty the file contents
+    		-- To read: use json.load() --> takes in a json file to read. It converts the json data into a Python dictionary
+    			-- This is open referred to as "Serialization/Deserialization"
+    		-- To update: use json.update()
+
+    -- Also includes error handling for FILENOTFOUND errors
+
+
+    *** (Previous lesson notes) ***
     -- POPUPS: user Standard Dialogs and Message Boxes
     -- messagebox is a TKinter module and not a class, therefore it needs to be imported along with all the classes (*)
     -- Pyerclip: allows you to save strings to the clipboard of your computer
@@ -8,7 +21,7 @@
     	-- Use pyperclip.copy(): copy text to clipboard
     	-- Use pyperclip.paste(): paste the copied text from clipboard
 """
-
+import json
 from tkinter import *  # specifying the (*) will import all tkinter classes, but not individual modules
 from tkinter import messagebox
 import pandas
@@ -16,7 +29,6 @@ from random import choice, randint, shuffle
 import pyperclip
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
-#Password Generator Project
 
 def generate_password():
 	letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
@@ -25,34 +37,12 @@ def generate_password():
 	numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 	symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
 
-	""" Re-write using LIST COMPREHENSION and importing specific modules to shorten the original Random Password Generator code """
-
-	# nr_letters = random.randint(8, 10)
-	# nr_symbols = random.randint(2, 4)
-	# nr_numbers = random.randint(2, 4)
-	# password_list = []
-	#
-	# for char in range(nr_letters):
-	# 	password_list.append(random.choice(letters))
-	#
-	# for char in range(nr_symbols):
-	# 	password_list += random.choice(symbols)
-	#
-	# for char in range(nr_numbers):
-	# 	password_list += random.choice(numbers)
-
 	password_letters = [choice(letters) for letter in range(randint(8, 10))]
 	password_symbols = [choice(symbols) for symbol in range(randint(2, 4))]
 	password_numbers = [choice(numbers) for num in range(randint(2, 4))]
 
 	password_list = password_letters + password_symbols + password_numbers
 	shuffle(password_list)
-
-
-	# Shorten code by using the .join() method
-	# password = ""
-	# for char in password_list:
-	# 	password += char
 
 	password = "".join(password_list)
 
@@ -63,43 +53,72 @@ def generate_password():
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 
-
-# USING PANDAS AND CSV
-def save_to_csv():
-	password = password_input.get()
-	website = website_input.get()
-	emailUser = emailUser_input.get()
-	global my_pass_data
-	my_pass_data = {
-		"website": [website],
-		"emailUser": [emailUser],
-		"password": [password]
-	}
-	my_pass_dataframe = pandas.DataFrame(my_pass_data)
-	print(my_pass_dataframe)
-	my_pass_dataframe.to_csv("my_pass.csv")
-
-
 def save_to_file():
 	password = password_input.get()
 	website = website_input.get()
 	email_user = emailUser_input.get()
 
-	if len(password) <= 0 or len(website) <= 0 or len(email_user) <= 0:
-		empty_entry_message = "Please don't leve any fields empty"
-		messagebox.showwarning(title="Oops", message=empty_entry_message)
-	else:
-		# USER INPUT CONFIRMATION POPUP
-		confirm_message = f"These are the details entered:\nEmail: {email_user}\nPassword: {password}\n"
-		is_ok = messagebox.askokcancel(website, confirm_message)
+	# create a data dictionary to hold the json data to write to the json file
+	new_data = {
+		website: {
+			"email": email_user,
+			"password": password
+		}
+	}
 
-		if is_ok:
-			global my_pass_data
-			with open("my_pass_file", "a") as file:
-				file.write(f"{website} | {email_user} | {password}\n")
-				print(f"{website} | {email_user} | {password}")
+	if len(password) <= 0 or len(website) <= 0 or len(email_user) <= 0:
+		messagebox.showwarning(title="Oops", message="Please don't leve any fields empty")
+	else:
+		with open("data.json", "w") as file:
+
+			# json.dump() takes in our dictionary of data, and the file it needs to write to; also number of spaces to indent to make file easier to read (visually)
+			json.dump(new_data, file, indent=4)
 			password_input.delete(0, END)
 			website_input.delete(0, END)
+
+
+# Testing: Read json data
+# with open("data.json", "r") as file:
+# 	# json.load() takes in a json file to read. Also change the "open" flag to "r" for read
+# 	data = json.load(file)
+# 	print(data)
+
+
+# created new function to retain lesson content instead of complete coding over original "save" function
+def save_json_update():
+	password = password_input.get()
+	website = website_input.get()
+	email_user = emailUser_input.get()
+
+	# create a data dictionary to hold the json data to write to the json file
+	new_data = {
+		website: {
+			"email": email_user,
+			"password": password
+		}
+	}
+
+	if len(password) <= 0 or len(website) <= 0 or len(email_user) <= 0:
+		messagebox.showwarning(title="Oops", message="Please don't leve any fields empty")
+	else:
+		try:
+			with open("data.json", "r") as file:
+				# read old data
+				data = json.load(file)
+		except FileNotFoundError: # "try" failed, so need to create and write simultaneously to the file with the "w" write flag
+			with open("data.json", "w") as file:
+				json.dump(new_data, file, indent=4)
+		else: # the "try" succeeded, so continue with program requirements
+			# update old data with new data
+			data.update(new_data)
+
+			with open("data.json", "w") as file:
+				json.dump(data, file, indent=4)
+		finally: # regardless of the "try" passing or exception caught, clear the input fields with the "finally" clause
+			password_input.delete(0, END)
+			website_input.delete(0, END)
+
+
 
 
 # ---------------------------- UI SETUP ------------------------------- #
