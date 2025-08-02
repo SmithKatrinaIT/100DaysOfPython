@@ -1,0 +1,14 @@
+{
+    "Amazon": {
+        "email": "yourEmailAddress@example.com",
+        "password": "hP!f+j$t5UT6U05es"
+    },
+    "Ebay": {
+        "email": "yourEmailAddress@example.com",
+        "password": "pEyj(9VW)D6X"
+    },
+    "Wells Fargo": {
+        "email": "yourEmailAddress@example.com",
+        "password": "%nX#ea3rK+(S5O"
+    }
+}
