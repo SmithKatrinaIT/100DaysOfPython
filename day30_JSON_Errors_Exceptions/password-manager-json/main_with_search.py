@@ -5,7 +5,7 @@
     	-- Will be able to update an existing entry or add a new one
 
     NOTE:  This code is void of previous lesson comments to focus on the "search" functionality"
-    -- refer to the main.py for the starting code if necessary
+    -- refer to the nutritionix_api.py for the starting code if necessary
 
 
 """
