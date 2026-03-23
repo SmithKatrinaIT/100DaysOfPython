@@ -1,0 +1,41 @@
+
+	CONCEPTS: WEB DESIGN
+
+	-- COLOR
+		-- Be aware of the mood of your color palette
+			RED:  love, energy, intensity
+			YELLOW: joy, intellect, attention
+			GREEN: freshness, safety, growth
+			BLUE: stability, trust, serenity
+			PURPLE: royalty, wealth, femininity
+
+
+	-- TYPOGRAPHY
+		-- 2 large font families:
+			--  Serif: which have little feet at the end of their central beams; inspired by the marble carvings of days of yore
+				-- Mode it conveys: Traditional, Stable, Respectable
+
+			--  San-Serif: which have perfect right angles
+				-- Mode is conveys: Sensible, Simple, Straightforward
+
+		-- Stick to 2 fonts in your design; keep the same mode
+
+
+	-- User Interface Design
+		-- 1) Hierarchy: Establish hierarchy with the use of "color and size of text/objects" to convey the important elements first
+			-- Use color contrasting techniques to establish hierarchy
+			-- Use size - bigger items draw you to it
+
+		-- 2) Layout
+		--	characters per line of text: 40 - 60 characters
+
+	-- User Experience Design
+		-- Is supposed to be un-intrusive
+		-- Is supposed to be invisible
+		-- Key factors:
+			1)	Keep things simple
+			2)	Be consistent
+			3)	Be aware of Reading Patters
+				-- F Patten: most common, eye starts at top left corner and then tracks the right and then it flips back again browsing down the left gutter
+				-- Z Pattern: left to right then zigzagging down all the way
+

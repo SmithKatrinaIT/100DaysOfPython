@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms</title>
+</head>
+<body>
+<h1>Hello Forms</h1>
+</body>
+
+    <form action="{{ url_for('login_data') }}" method="post">
+        <label for="username">Name:</label>
+        <input type="text" name="username"  placeholder="name" />
+        &nbsp;
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" placeholder="password" />
+
+        <button type="submit">OK</button>
+    </form>
+</html>

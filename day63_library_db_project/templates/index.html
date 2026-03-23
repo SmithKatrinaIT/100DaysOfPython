@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+     {% block styles %}
+    <!-- Load Bootstrap-Flask CSS here -->
+     {{ bootstrap.load_css() }}
+
+    <!-- Link to the styles.css here to apply styling to all the child templates.-->
+    {% endblock %}
+
+    <title>Library</title>
+  </head>
+  <body>
+
+      <div class="container px-4 pt-5 my-5"><h1>My Database Library</h1>
+      {% if books_db == []: %}
+      <p>Library is empty</p>
+      {% else %}
+        <ul>
+          {% for book in books_db %}
+            <li><a href="{{ url_for('delete_book', id=book.id ) }}">Delete</a> &nbsp; {{ book.title }} - {{ book.author }} - {{ book.rating }} <a href="{{ url_for('edit_rating', id=book.id) }}">Edit Rating</a></li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    <a href="{{ url_for('add') }}">Add New Book</a>
+    </div>
+
+  </body>
+</html>
