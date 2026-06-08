@@ -8,6 +8,11 @@ from wtforms.fields.choices import SelectField
 from wtforms.fields.simple import URLField
 from wtforms.validators import DataRequired, URL
 import csv
+from dotenv import load_dotenv
+
+
+# Load ENV variables
+load_dotenv("../.env")
 
 '''
 Red underlines? Install the required packages first: 
@@ -23,7 +28,7 @@ This will install the packages from requirements.txt for this project.
 '''
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.config['SECRET_KEY'] = os.environ.get("FLASK_KEY")
 
 
 class CafeForm(FlaskForm):

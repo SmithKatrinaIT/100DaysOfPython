@@ -12,6 +12,7 @@ from day61_Flask_WTForms.contact_form import ContactForm
 from flask_bootstrap import Bootstrap5
 from dotenv import load_dotenv
 
+
 # Load ENV variables
 load_dotenv("../.env")
 

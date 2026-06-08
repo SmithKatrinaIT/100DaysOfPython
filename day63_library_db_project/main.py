@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_bootstrap import Bootstrap5
 from flask_sqlalchemy import SQLAlchemy
@@ -7,6 +9,11 @@ from wtforms.fields.simple import StringField, SubmitField
 from wtforms.validators import DataRequired
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 from sqlalchemy import Integer, String, Float
+from dotenv import load_dotenv
+
+
+# Load ENV variables
+load_dotenv("../.env")
 
 '''
 	SQLAlchemy
@@ -35,8 +42,7 @@ app = Flask(__name__)  # Create the Flask instance (application)
 Bootstrap5(app)
 
 # configure Items
-app.config[
-	'SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'  # configure the secret key  for cross-site Request Forgery (CSRF)
+app.config['SECRET_KEY'] = os.environ.get("FLASK_KEY")  # configure the secret key  for cross-site Request Forgery (CSRF)
 app.config[
 	"SQLALCHEMY_DATABASE_URI"] = "sqlite:///books-collection.db"  # configure (add) the SQLite DB, relative to the app instance folder
 

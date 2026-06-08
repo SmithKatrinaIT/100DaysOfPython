@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask, render_template, redirect, url_for, request
 from flask_bootstrap import Bootstrap5
 from flask_sqlalchemy import SQLAlchemy
@@ -7,7 +9,12 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.fields.numeric import FloatField, IntegerField
 from wtforms.validators import DataRequired, Length, NumberRange
+from dotenv import load_dotenv
 import requests
+
+
+# Load ENV variables
+load_dotenv("../.env")
 
 '''
 Red underlines? Install the required packages first: 
@@ -23,7 +30,7 @@ This will install the packages from requirements.txt for this project.
 '''
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.config['SECRET_KEY'] = os.environ.get("FLASK_KEY")
 Bootstrap5(app)
 
 # CREATE DB
