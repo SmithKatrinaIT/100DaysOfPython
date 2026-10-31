@@ -28,7 +28,7 @@ app = Flask(__name__)
 @app.route("/")
 def home():
 
-	return render_template("index.html", posts=all_posts['data'])
+	return render_template("index_old.html", posts=all_posts['data'])
 
 
 @app.route("/about")

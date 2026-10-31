@@ -13,13 +13,15 @@
 import os
 import requests
 from datetime import datetime
-from dotenv import load_dotenv
+
+from dotenvx import load_dotenv
 
 # Load ENV variables
 load_dotenv("../.env")
 
 # retrieve sensitive data from environments file
 USERNAME = os.environ.get("PIXELA_USERNAME")
+
 TOKEN = os.environ.get("PIXELA_TOKEN")
 GRAPH = "graph1"
 

@@ -118,7 +118,7 @@ def home():
         all_movies[i].ranking = len(all_movies) - i
     db.session.commit()
 
-    return render_template("index.html", movies=all_movies)
+    return render_template("index_old.html", movies=all_movies)
 
 @app.route("/edit", methods=["GET", "POST"])
 def update_rating():

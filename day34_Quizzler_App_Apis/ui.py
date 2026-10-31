@@ -42,7 +42,7 @@ class QuizInterface:
 		self.right_btn = Button(image=right_img, highlightthickness=0, command=self.guess_true)
 		self.right_btn.grid(column=0, row=2)
 
-		#populate the canvas from quiz_brain
+		#populate the canvas from quizzler
 		self.get_next_question()
 
 

@@ -1,0 +1,54 @@
+<aside class="interactive-project-nav" aria-label="Interactive Python projects">
+
+    <div class="interactive-project-nav__header">
+        <p class="eyebrow mb-2">INTERACTIVE PROJECTS</p>
+        <h2 class="interactive-project-nav__title">Python Lab</h2>
+        <p class="interactive-project-nav__intro">Explore runnable Python projects directly in the browser.</p>
+    </div>
+
+    <nav>
+        <ul class="interactive-project-nav__list">
+            <li>
+                <a href="{{ url_for('morse_code_project') }}" class="interactive-project-nav__link
+                    {% if active_project == 'morse' %}is-active{% endif %}"
+                    {% if active_project == 'morse' %}
+                        aria-current="page"
+                    {% endif %} >
+                    <span>
+                        <strong>Morse Code Converter</strong>
+                        <small>Python · Flask</small>
+                    </span>
+                    <span aria-hidden="true">→</span>
+                </a>
+            </li>
+                <a href="{{ url_for('quizzler_project') }}" class="interactive-project-nav__link
+                    {% if active_project == 'quizzler' %}is-active{% endif %}"
+                    {% if active_project == 'quizzler' %}
+                        aria-current="page"
+                    {% endif %}
+                >
+                    <span>
+                        <strong>Quizzler</strong>
+                        <small>Python · Flask · API</small>
+                    </span>
+
+                    <span aria-hidden="true">→</span>
+                </a>
+            </li>
+
+
+        </ul>
+    </nav>
+
+    <div class="interactive-project-nav__footer">
+
+        <a
+            href="{{ url_for('projects', _anchor='interactive-projects') }}"
+            class="interactive-project-nav__all"
+        >
+            View all interactive projects →
+        </a>
+
+    </div>
+
+</aside>

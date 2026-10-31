@@ -72,10 +72,10 @@ def get_all_posts():
     new_list = [post for post in result]
 
     # using Method 1:
-    # return render_template("index.html", all_posts=posts)
+    # return render_template("index_old.html", all_posts=posts)
 
     # using Method 2
-    return render_template("index.html", all_posts=new_list)
+    return render_template("index_old.html", all_posts=new_list)
 
 # TODO: Add a route so that you can click on individual posts.
 @app.route('/post/<int:post_id>', methods=["GET"])

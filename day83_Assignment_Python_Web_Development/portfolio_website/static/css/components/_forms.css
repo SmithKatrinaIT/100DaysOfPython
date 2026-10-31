@@ -1,0 +1,122 @@
+/* Form */
+.morse-code-form-wrap,
+.contact-form-wrap {
+  background: var(--canvas);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+}
+
+.morse-code-form,
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.form-label {
+  font-size: 0.875rem;  /* 14px */
+  font-weight: 600;
+  color: var(--ink);
+}
+.form-required { color: var(--blue); margin-left: .125rem; }
+
+.form-select,
+.form-input,
+.form-textarea {
+  font-family: var(--font-body);
+  font-size: 1rem;       /* 16px — meets accessibility minimum */
+  color: var(--ink);
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: .75rem 1rem;
+  width: 100%;
+  transition: border-color .2s, box-shadow .2s;
+  min-height: 48px;
+}
+
+select.form-select{
+  /* 1. Remove the default browser arrow and add right padding for text space */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 2.5rem;
+
+ /* 2. Add your custom SVG or image arrow */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+  background-repeat: no-repeat;
+
+  /* 3. Adjust this percentage or px value to move the arrow left or right */
+  background-position: calc(100% - 1rem) center;
+  background-size: 1rem;
+}
+
+.form-textarea { resize: vertical; min-height: 140px; }
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--muted);
+  font-size: 0.9375rem;  /* 15px */
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(37,99,235,.15);
+}
+
+/* Form states */
+.form-success,
+.form-error {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 1.5rem;
+  font-size: 0.9375rem;  /* 15px */
+}
+.form-success {
+  background: rgba(6,182,212,.08);
+  border: 1px solid rgba(6,182,212,.3);
+  color: #0e7490;
+}
+.form-success svg { color: #0e7490; flex-shrink: 0; margin-top: .125rem; }
+.form-success strong { display: block; font-size: 1rem; margin-bottom: .25rem; }
+.form-success p { color: #0e7490; font-size: 0.875rem; margin: 0; }  /* 14px */
+
+.flash-message {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.flash-close {
+  border: 0;
+  background: transparent;
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.flash-message.is-hidden {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+.form-error {
+  background: rgba(239,68,68,.07);
+  border: 1px solid rgba(239,68,68,.25);
+  color: #dc2626;
+}
+.form-error svg { color: #dc2626; flex-shrink: 0; margin-top: .125rem; }
+.form-error strong { display: block; font-size: 1rem; margin-bottom: .25rem; }
+.form-error p { color: #b91c1c; font-size: 0.875rem; margin: 0; }  /* 14px */

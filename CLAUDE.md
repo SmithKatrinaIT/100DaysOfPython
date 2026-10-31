@@ -10,7 +10,7 @@ This is a personal learning repo following Dr. Angela Yu's "100 Days of Code: Py
 
 **Console scripts (days 1–30):**
 ```bash
-python3 day<N>_<name>/main.py
+python3 day<N>_<name>/pandas_concept.py
 # or whichever .py file is the entry point
 ```
 
@@ -18,7 +18,7 @@ python3 day<N>_<name>/main.py
 ```bash
 cd day<N>_<name>
 pip3 install -r requirements.txt
-python3 main.py
+python3 pandas_concept.py
 ```
 Most Flask apps run on `debug=True`. The port varies per project — check the `app.run(...)` call at the bottom of `main.py`.
 

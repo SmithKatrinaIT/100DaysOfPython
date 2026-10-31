@@ -1,0 +1,451 @@
+/* =========================================================
+   INTERACTIVE PROJECT LAYOUT
+   ========================================================= */
+
+section#interactive-projects {
+  scroll-margin-top: 80px;
+}
+
+.interactive-project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+.interactive-project-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    padding: 1.75rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+
+    transition: box-shadow .25s, transform .25s;
+}
+
+.interactive-project-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-3px);
+}
+
+.interactive-project-card__body {
+    flex: 1;
+}
+
+.interactive-project-card__footer {
+    margin-top: auto;
+    padding-top: 1.5rem;
+}
+
+
+/* Tablet / mobile */
+
+@media (max-width: 768px) {
+    .interactive-project-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.interactive-project-card__footer {
+    margin-top: auto;
+    padding-top: 1.5rem;
+}
+
+.interactive-project__header {
+    max-width: 760px;
+    margin-bottom: 3rem;
+}
+
+.interactive-project__title {
+    margin-bottom: 0.75rem;
+}
+
+.interactive-project__lead {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    max-width: 680px;
+}
+
+
+.interactive-project__layout {
+    display: grid;
+    grid-template-columns: minmax(240px, 300px) minmax(0, 1fr);
+    gap: 2rem;
+    align-items: start;
+}
+
+
+/* =========================================================
+   PROJECT SIDE NAV
+   ========================================================= */
+
+.interactive-project-nav {
+    border: 1px solid var(--border-color, #e2e5ea);
+    border-radius: 12px;
+    padding: 1.5rem;
+    background: #fff;
+}
+
+.interactive-project-nav__header {
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid #e8eaee;
+}
+
+.interactive-project-nav__title {
+    font-size: 1.35rem;
+    margin-bottom: 0.5rem;
+}
+
+.interactive-project-nav__intro {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+    color: #667085;
+}
+
+
+.interactive-project-nav__list {
+    list-style: none;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.interactive-project-nav__list li {
+    margin-bottom: 0.35rem;
+}
+
+
+.interactive-project-nav__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 1rem;
+
+    padding: 0.9rem 0.85rem;
+
+    border-radius: 8px;
+
+    color: inherit;
+    text-decoration: none;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.interactive-project-nav__link:hover {
+    background: #f5f6f8;
+    transform: translateX(2px);
+}
+
+
+.interactive-project-nav__link strong {
+    display: block;
+    font-size: 0.95rem;
+}
+
+
+.interactive-project-nav__link small {
+    display: block;
+    margin-top: 0.2rem;
+
+    font-size: 0.75rem;
+    color: #667085;
+}
+
+
+/* Current project */
+
+.interactive-project-nav__link.is-active {
+    background: #f0f2f5;
+    font-weight: 600;
+}
+
+.interactive-project-nav__link.is-active::before {
+    content: "";
+    width: 3px;
+    align-self: stretch;
+    border-radius: 3px;
+    background: currentColor;
+}
+
+
+.interactive-project-nav__footer {
+    padding-top: 1rem;
+    border-top: 1px solid #e8eaee;
+}
+
+
+.interactive-project-nav__all {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   PROJECT WORKSPACE
+   ========================================================= */
+
+.interactive-project__panel {
+    border: 1px solid #e2e5ea;
+    border-radius: 12px;
+    padding: 2rem;
+    background: #fff;
+}
+
+
+.interactive-project__panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 1rem;
+
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.75rem;
+
+    border-bottom: 1px solid #e8eaee;
+}
+
+
+.interactive-project__panel-label,
+.interactive-project__result-label {
+    margin-bottom: 0.35rem;
+
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+}
+
+
+.interactive-project__status {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 0.35rem 0.65rem;
+
+    border: 1px solid #d8dce2;
+    border-radius: 100px;
+
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+
+.interactive-project__result {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+
+    border-top: 1px solid #e8eaee;
+}
+
+
+.interactive-project__result-value {
+    margin-top: 0.75rem;
+
+    padding: 1.25rem;
+
+    border: 1px solid #e2e5ea;
+    border-radius: 8px;
+
+    background: #f7f8fa;
+
+    overflow-wrap: anywhere;
+}
+
+
+.interactive-project__result-value code {
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .interactive-project__layout {
+        grid-template-columns: 1fr;
+    }
+
+    .interactive-project__sidebar {
+        order: 1;
+    }
+
+    .interactive-project__workspace {
+        order: 2;
+    }
+
+}
+
+
+@media (max-width: 576px) {
+
+    .interactive-project__panel {
+        padding: 1.25rem;
+    }
+
+    .interactive-project__panel-header {
+        flex-direction: column;
+    }
+
+}
+
+/* =========================================================
+   QUIZZLER
+   ========================================================= */
+
+.quiz-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 2rem;
+
+    padding-bottom: 1.5rem;
+
+    border-bottom: 1px solid #e8eaee;
+}
+
+
+.quiz-score {
+    text-align: right;
+
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+
+.quiz-score strong {
+    display: block;
+
+    margin-top: 0.25rem;
+
+    font-size: 1.4rem;
+}
+
+
+.quiz-progress {
+    margin: 2rem 0;
+}
+
+
+.quiz-progress__text {
+    margin-bottom: 0.5rem;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+
+/* Question card */
+
+.quiz-question {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 260px;
+
+    padding: 2.5rem;
+
+    border-radius: 12px;
+
+    background: #375362;
+    color: #fff;
+
+    text-align: center;
+}
+
+
+.quiz-question p {
+    margin: 0;
+
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    line-height: 1.6;
+}
+
+
+/* Answer controls */
+
+.quiz-actions {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 1rem;
+
+    margin-top: 1.5rem;
+}
+
+
+.quiz-answer-btn {
+    min-height: 56px;
+
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+
+.quiz-answer-btn--secondary {
+    border: 1px solid #cfd4dc;
+    background: #fff;
+}
+
+
+/* Feedback */
+
+.quiz-feedback {
+    margin-top: 1rem;
+
+    padding: 1rem;
+
+    border-radius: 8px;
+
+    font-weight: 600;
+}
+
+
+.quiz-feedback--correct {
+    background: #e9f7ef;
+}
+
+
+.quiz-feedback--incorrect {
+    background: #fdecec;
+}
+
+
+/* Completion */
+
+.quiz-complete {
+    padding: 4rem 2rem;
+
+    text-align: center;
+}
+
+
+.quiz-final-score {
+    margin: 1rem 0 2rem;
+
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.quiz-final-score span {
+    font-size: 1.5rem;
+    font-weight: 400;
+}

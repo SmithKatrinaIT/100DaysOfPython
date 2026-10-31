@@ -1,0 +1,45 @@
+/* ---- Buttons ---------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: .8125rem 1.75rem;   /* ~13px 28px → 48px height with line-height */
+  min-height: 48px;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;         /* 15px */
+  font-weight: 600;
+  letter-spacing: .01em;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: background-color .2s, color .2s, border-color .2s, box-shadow .2s, transform .15s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn { transition: none; }
+}
+
+.btn--primary {
+  background-color: var(--blue);
+  color: var(--white);
+  border-color: var(--blue);
+}
+.btn--primary:hover, .btn--primary:focus-visible {
+  background-color: var(--blue-dark);
+  border-color: var(--blue-dark);
+  box-shadow: 0 4px 14px rgba(37,99,235,.35);
+}
+
+.btn--secondary {
+  background-color: transparent;
+  color: var(--blue);
+  border-color: var(--border);
+}
+.btn--secondary:hover, .btn--secondary:focus-visible {
+  border-color: var(--blue);
+  background-color: rgba(37,99,235,.04);
+}
+
+.btn--full { width: 100%; }
+.btn--normal { width: 25%;}

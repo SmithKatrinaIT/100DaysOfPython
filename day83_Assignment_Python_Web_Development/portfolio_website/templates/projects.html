@@ -1,0 +1,296 @@
+{% extends "base.html" %}
+
+{% block title %}Projects | Katrina Smith{% endblock %}
+{% block meta_desc %}Portfolio case studies in UI/UX engineering, front-end architecture, enterprise application modernization, and full-stack development.{% endblock %}
+
+{% block content %}
+
+<!-- Page hero -->
+<section class="page-hero section" aria-labelledby="projects-heading">
+  <div class="container page-hero-inner">
+    <div class="page-hero-content">
+      <p class="eyebrow">CASE STUDIES</p>
+      <h1 id="projects-heading" class="page-hero-heading">Engineering &amp; design in practice.</h1>
+      <p class="page-hero-sub">A selection of projects spanning enterprise application modernization, front-end architecture, design systems, and full-stack development. Employer case studies are presented at a portfolio-safe level.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Featured projects -->
+<section class="section" aria-labelledby="featured-projects-heading">
+  <div class="container">
+    <h2 id="featured-projects-heading" class="sr-only">Featured Projects</h2>
+
+    <!-- Featured card 1 -->
+    <article class="project-card project-card--featured reveal" aria-label="Workforce and Telemetry Application Modernization case study">
+      <div class="project-card-meta">
+        <span class="project-card-type">Enterprise UI / UX Modernization</span>
+        <span class="project-card-badge">Featured</span>
+      </div>
+      <div class="project-card-body">
+        <div class="project-card-content">
+          <h3 class="project-card-title">Workforce &amp; Telemetry Application Modernization</h3>
+
+          <dl class="case-study-dl">
+            <div class="case-study-row">
+              <dt>Challenge</dt>
+              <dd>Improve complex technician workflows across workforce and telemetry applications to reduce task-completion time and improve operational reliability.</dd>
+            </div>
+            <div class="case-study-row">
+              <dt>My Role</dt>
+              <dd>UI/UX leadership, front-end architecture, stakeholder collaboration, and reusable pattern development across product, design, engineering, network, and operations teams.</dd>
+            </div>
+            <div class="case-study-row">
+              <dt>Impact</dt>
+              <dd>Redesigned workflows contributed to an approximately 50% reduction in technician task-completion time.</dd>
+            </div>
+          </dl>
+
+          <div class="project-tags project-tags--spaced">
+            <span class="tag">UI/UX</span>
+            <span class="tag">Angular</span>
+            <span class="tag">Figma</span>
+            <span class="tag">Enterprise Applications</span>
+            <span class="tag">Observability</span>
+          </div>
+        </div>
+
+        <div class="project-card-aside" aria-hidden="true">
+          <div class="project-visual project-visual--a">
+            <div class="pv-bar-row">
+              <span class="pv-label">Before</span>
+              <div class="pv-bar-track"><div class="pv-bar" style="width:90%"></div></div>
+            </div>
+            <div class="pv-bar-row">
+              <span class="pv-label">After</span>
+              <div class="pv-bar-track"><div class="pv-bar pv-bar--accent" style="width:45%"></div></div>
+            </div>
+            <div class="pv-stat">~50% faster</div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Featured card 2 -->
+    <article class="project-card project-card--featured reveal" aria-label="Modular Widget-Based UI Platform case study">
+      <div class="project-card-meta">
+        <span class="project-card-type">Front-End Architecture</span>
+        <span class="project-card-badge">Featured</span>
+      </div>
+      <div class="project-card-body">
+        <div class="project-card-content">
+          <h3 class="project-card-title">Modular Widget-Based UI Platform</h3>
+
+          <dl class="case-study-dl">
+            <div class="case-study-row">
+              <dt>Challenge</dt>
+              <dd>Enable modular UI composition and accelerate consistent feature delivery across multiple enterprise interfaces.</dd>
+            </div>
+            <div class="case-study-row">
+              <dt>My Role</dt>
+              <dd>Designed and implemented a widget-based frontend approach using Google Lit and reusable UI patterns.</dd>
+            </div>
+          </dl>
+
+          <div class="project-tags project-tags--spaced">
+            <span class="tag">Google Lit</span>
+            <span class="tag">Web Components</span>
+            <span class="tag">Front-End Architecture</span>
+            <span class="tag">Design Systems</span>
+          </div>
+        </div>
+
+        <div class="project-card-aside" aria-hidden="true">
+          <div class="project-visual project-visual--b">
+            <div class="widget-grid-demo">
+              <div class="wg wg--a">Widget A</div>
+              <div class="wg wg--b">Widget B</div>
+              <div class="wg wg--c">Widget C</div>
+              <div class="wg wg--d">Widget D</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- =====================================================
+     Interactive Projects
+     ===================================================== -->
+
+<section id="interactive-projects" class="section section--canvas" aria-labelledby="interactive-projects-heading">
+    <div class="container">
+        <div class="interactive-projects-heading reveal">
+            <div>
+              <p class="eyebrow">HANDS-ON PROJECTS</p>
+              <h2 id="interactive-projects-heading" class="section-heading">Interactive Projects</h2>
+            </div>
+
+            <p class="interactive-projects-intro">
+                A collection of runnable applications demonstrating
+                Python, Flask, application logic, and front-end
+                integration. Launch a project and try it directly
+                in the browser.
+            </p>
+        </div>
+        <div class="interactive-project-grid">
+            <!-- Morse Code Converter -->
+            <article class="interactive-project-card reveal"  aria-label="Morse Code Converter" >
+                <div class="interactive-project-card__top">
+                    <span class="project-card-type"> Python / Flask  </span>
+                    <span class="project-card-badge"> Interactive </span>
+                </div>
+                <div class="interactive-project-card__body">
+                    <h3 class="project-card-title">Morse Code Converter </h3>
+                    <p>
+                        Translate standard text into Morse code or
+                        decode Morse code back into readable text
+                        through an interactive Flask interface.
+                    </p>
+                    <div class="project-tags project-tags--spaced">
+                        <span class="tag">Python</span>
+                        <span class="tag">Flask</span>
+                        <span class="tag">WTForms</span>
+                        <span class="tag">Jinja</span>
+                        <span class="tag">Bootstrap 5</span>
+                    </div>
+                </div>
+
+                <div class="interactive-project-card__footer">
+                    <a href="{{ url_for('morse_code_project') }}" class="btn btn--primary" >Launch Project</a>
+                </div>
+            </article>
+
+            <!-- Quizzler -->
+            <article class="interactive-project-card reveal"  aria-label="Morse Code Converter" >
+                <div class="interactive-project-card__top">
+                    <span class="project-card-type"> Python / Flask  </span>
+                    <span class="project-card-badge"> Interactive </span>
+                </div>
+                <div class="interactive-project-card__body">
+                    <h3 class="project-card-title">Quizzler</h3>
+                    <p>
+                        An interactive True/False trivia application originally developed as a Python/Tkinter desktop GUI
+                        and refactored into a Flask web application. Trivia questions are dynamically retrieved from the
+                        Open Trivia Database API across randomly selected categories.
+                    </p>
+                    <div class="project-tags project-tags--spaced">
+                        <span class="tag">Python</span>
+                        <span class="tag">Flask</span>
+                        <span class="tag">REST API</span>
+                        <span class="tag">WTForms</span>
+                        <span class="tag">Jinja</span>
+
+                    </div>
+                </div>
+
+                <div class="interactive-project-card__footer">
+                    <a href="{{ url_for('quizzler_project') }}" class="btn btn--primary" >Launch Project</a>
+                </div>
+            </article>
+          <!-- Add future interactive cards here -->
+
+
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<!-- Project grid -->
+<section class="section" aria-labelledby="more-projects-heading">
+  <div class="container">
+    <h2 id="more-projects-heading" class="section-heading reveal">More projects</h2>
+
+    <div class="project-grid">
+
+      <article class="project-card-sm reveal" aria-label="One UI Standards project">
+        <div class="project-card-type">Design System / UI Governance</div>
+        <h3 class="project-card-sm-title">One UI Standards</h3>
+        <p class="project-card-sm-body">Helped establish common UI patterns and style guidance and translated design artifacts into reusable implementation patterns across multiple enterprise applications.</p>
+        <div class="project-tags">
+          <span class="tag">UI Standards</span>
+          <span class="tag">Figma</span>
+          <span class="tag">Reusable Components</span>
+          <span class="tag">UX Engineering</span>
+        </div>
+      </article>
+
+      <article class="project-card-sm reveal" aria-label="Research Training Application project">
+        <div class="project-card-type">Full-Stack / Internal Application &mdash; Emory University</div>
+        <h3 class="project-card-sm-title">Research Training Application</h3>
+        <p class="project-card-sm-body">Co-developed a web application serving as a centralized training record solution to improve verifiable researcher training information management.</p>
+        <div class="project-tags">
+          <span class="tag">Web Application</span>
+          <span class="tag">Requirements</span>
+          <span class="tag">Front-End</span>
+          <span class="tag">Back-End</span>
+        </div>
+      </article>
+
+      <article class="project-card-sm reveal" aria-label="Project Backlog Application project">
+        <div class="project-card-type">Workflow Modernization &mdash; Emory University</div>
+        <h3 class="project-card-sm-title">Project Backlog Application</h3>
+        <p class="project-card-sm-body">Built an internal application to replace static project documentation with persistent, accessible project tracking and improved requirement discovery.</p>
+        <div class="project-tags">
+          <span class="tag">Business Analysis</span>
+          <span class="tag">Web Development</span>
+          <span class="tag">Workflow Design</span>
+        </div>
+      </article>
+
+      <article class="project-card-sm reveal" aria-label="Infrastructure Modernization project">
+        <div class="project-card-type">Systems Modernization &mdash; Emory University</div>
+        <h3 class="project-card-sm-title">Infrastructure Modernization</h3>
+        <p class="project-card-sm-body">Requirements analysis, environment build-out, unit/integration/system/acceptance testing, and go-live readiness for replacement of an end-of-service Windows Server environment.</p>
+        <div class="project-tags">
+          <span class="tag">Windows Server</span>
+          <span class="tag">Testing</span>
+          <span class="tag">Migration</span>
+          <span class="tag">Security</span>
+        </div>
+      </article>
+
+      <article class="project-card-sm reveal" aria-label="OneFitness Mobile App project">
+        <div class="project-card-type">Academic / Personal Project</div>
+        <h3 class="project-card-sm-title">OneFitness Mobile App</h3>
+        <p class="project-card-sm-body">Re-designed UI and worked with Ionic, Angular, and Firebase including a Firebase real-time database and JSON-based data.</p>
+        <div class="project-tags">
+          <span class="tag">Ionic</span>
+          <span class="tag">Angular</span>
+          <span class="tag">Firebase</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">SCSS</span>
+        </div>
+      </article>
+
+      <article class="project-card-sm reveal" aria-label="WordPress UX Volunteer Work project">
+        <div class="project-card-type">Volunteer UX</div>
+        <h3 class="project-card-sm-title">WordPress UX / Volunteer Work</h3>
+        <p class="project-card-sm-body">Managed and modernized WordPress experiences for nonprofit motorcycle organizations with attention to usability and accessibility.</p>
+        <div class="project-tags">
+          <span class="tag">WordPress</span>
+          <span class="tag">UI/UX</span>
+          <span class="tag">Accessibility</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section closing-cta" aria-labelledby="projects-cta-heading">
+  <div class="container closing-inner reveal">
+    <h2 id="projects-cta-heading" class="closing-heading">Interested in working together?</h2>
+    <a href="{{ url_for('contact') }}" class="btn btn--primary">Start a Conversation</a>
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}
+{% endblock %}

@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% set active_project = "quizzler" %}
+{% block title %} Quizzler | Katrina Smith{% endblock %}
+
+{% block meta_desc %}
+Interactive Python trivia application built with Flask and the
+Open Trivia Database API.
+{% endblock %}
+
+{% block content %}
+
+<section class="section interactive-project">
+    <div class="container">
+        <!-- Project Header -->
+        <header class="interactive-project__header">
+            <p class="eyebrow">PYTHON / FLASK / API PROJECT</p>
+
+            <h1 class="interactive-project__title">Quizzler</h1>
+
+            <p class="interactive-project__lead">
+                Test your knowledge with a randomly generated
+                True or False trivia quiz.
+            </p>
+
+            <div class="project-tags mt-3">
+                <span class="tag">Python</span>
+                <span class="tag">Flask</span>
+                <span class="tag">REST API</span>
+                <span class="tag">WTForms</span>
+                <span class="tag">Jinja</span>
+                <span class="tag">Bootstrap 5</span>
+            </div>
+        </header>
+
+        <div class="interactive-project__layout">
+            <!-- Reusable Project Navigation -->
+            <div class="interactive-project__sidebar">
+                {% include "components/interactive_project_nav.html"  %}
+            </div>
+
+            <!-- QUIZ -->
+            <main class="interactive-project__workspace">
+                <div class="interactive-project__panel">
+                    <!-- Quiz header -->
+                    <div class="quiz-header">
+                        <div>
+                            <p class="interactive-project__panel-label"> CATEGORY</p>
+                            <h2>{{ category|title }}</h2>
+                        </div>
+
+                        <div class="quiz-score">
+                            Score <strong>{{ score }} / {{ question_number }}</strong>
+                        </div>
+                    </div>
+
+                    {% if not quiz_complete %}
+                        <!-- Progress -->
+                        <div class="quiz-progress">
+                            <div class="quiz-progress__text">
+                                Question {{ question_number + 1 }} of {{ total_questions }}
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: {{ ((question_number + 1) / total_questions * 100) }}%" >
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Question -->
+                        <div class="quiz-question">
+                            <p> {{ question.text | safe }} </p>
+                        </div>
+
+                        <!-- Feedback -->
+
+                        {% if feedback %}
+                            <div class="quiz-feedback  {% if answer_correct %}  quiz-feedback--correct {% else %}   quiz-feedback--incorrect  {% endif %} " >
+                                {{ feedback }}
+                            </div>
+                        {% endif %}
+
+                        <!-- True / False -->
+                        <form method="POST">
+                            {{ form.hidden_tag() }}
+                            <div class="quiz-actions">
+                                {{ form.true( class="btn btn--primary quiz-answer-btn") }}
+                                {{ form.false( class="btn quiz-answer-btn quiz-answer-btn--secondary" ) }}
+                            </div>
+                        </form>
+
+                    {% else %}
+                        <!-- Quiz Complete -->
+                        <div class="quiz-complete">
+                            <p class="eyebrow">QUIZ COMPLETE</p>
+                            <h2>Nice work!</h2>
+
+                            <p>Your final score was</p>
+                            <div class="quiz-final-score">
+                                {{ score }} <span>/ {{ total_questions }} </span>
+                            </div>
+
+                            <a href="{{ url_for('restart_quizzler') }}" class="btn btn--primary" >Play Again </a>
+                        </div>
+                    {% endif %}
+                </div>
+            </main>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

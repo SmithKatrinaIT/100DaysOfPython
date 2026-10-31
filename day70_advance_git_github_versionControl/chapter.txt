@@ -17,6 +17,13 @@ And that is basically an intermediate place where you can pick and choose which 
 
     -git diff: compare changes between in version of a file
 
+    -git fetch <remote_name>: downloads the commits that the remote has but are missing from our local repository, and
+        --updates where our remote branches point (for instance, o/main)
+        --does not change anything about your local state. It will not update your main branch or change anything about how your file system looks right now
+
+    -git pull : combines the actions of 'git fetch' and 'git merge' in one action
+        --git pull --rebase: shorthand for fetch and rebase
+
 # Remote repository (like GitHub)
 
     *** Must tell your local git repository where your remote repository is
@@ -27,6 +34,7 @@ And that is basically an intermediate place where you can pick and choose which 
 
         -git push -u origin <branch_name> : the -u flag is used to link up the remote and the local repos
             -- origin is the name of the repo and the branch name is the branch within the repo
+            -- responsible for uploading your changes to a specified remote and updating that remote to incorporate your new commits.
 
 # To remove files from the staging area (after you have peformed a git add . or filename
     -git rm --cached -r .:   rm==remove, -r==recursively, .==all files
@@ -40,6 +48,7 @@ And that is basically an intermediate place where you can pick and choose which 
 
 # MERGING:
     -git merge branch-name: merge the feature or experimental branch with the main branch (main project). must be on the branch you want to merge the feature into
+        -- doesn't move your work (and instead just creates a merge commit), it's a way to tell git that you have incorporated all the changes from the remote
 
 # REBASE
     -git rebase branch-name: another way of combining work between branches. Rebasing essentially takes a set of commits, "copies" them, and plops them down somewhere else.
@@ -120,6 +129,15 @@ And that is basically an intermediate place where you can pick and choose which 
     is the hash of the commit being described.
 
 
+# Remote Branches Remote Repository
+    -git clone (URL): downloads a copy of a remote repository (public or private)
+    -- Remote branches are on your local repository, not on the remote repository as o/main
+    -- Remote branches reflect the state of remote repositories (since last time you talked to those remote repos)
+    -- they have a special property that when you check them out, you are put into detached HEAD mode
+
+    ** What is o/: Remote branches have a standard naming convention <remote-name>/<branch-name>
+        -- the o is for the remote name
+        -- most developers name the remote "origin" instead of just "o"
 
 
 

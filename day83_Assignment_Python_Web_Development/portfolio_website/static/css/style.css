@@ -1,0 +1,142 @@
+/* ============================================================
+   KATRINA SMITH PORTFOLIO
+   Palette: Ink / Slate / Muted / Canvas / Blue / Cyan
+   Fonts: DM Serif Display (display) + Inter (body)
+   ============================================================ */
+
+/* --------- Base ---------- */
+
+@import url("./base/_variables.css");
+@import url("./base/_reset.css");
+@import url("./base/_typography.css");
+
+
+/* ---------- Components ---------- */
+
+@import url("./components/_buttons.css");
+@import url("./components/_forms.css");
+@import url("./components/_tags.css");
+@import url("./components/_navigation.css");
+@import url("./components/_footer.css");
+
+
+/* ---------- Pages ---------- */
+
+@import url("./pages/_home.css");
+@import url("./pages/_about.css");
+@import url("./pages/_projects.css");
+@import url("./pages/_interactive-projects.css");
+@import url("./pages/_resume.css");
+@import url("./pages/_services.css");
+@import url("./pages/_contact.css");
+
+
+
+/* ---- Reveal animations ----------------------------------- */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity .55s ease, transform .55s ease;
+  }
+  .reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---- Responsive ------------------------------------------ */
+@media (max-width: 1024px) {
+  :root { --section-gap-lg: 4.5rem; }
+
+  .hero-inner { gap: 2.5rem; }
+  .visual-stack { height: 300px; }
+  .visual-card--a { width: 200px; }
+  .visual-card--b { width: 190px; }
+  .visual-card--c { width: 180px; }
+
+  .project-card-body { grid-template-columns: 1fr; }
+  .project-card-aside { display: none; }
+
+  .process-steps { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+  .process-steps::before { display: none; }
+
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .footer-brand { grid-column: 1 / -1; }
+}
+
+@media (max-width: 768px) {
+  :root { --section-gap-lg: 3.5rem; }
+
+  /* Nav mobile */
+  .nav { flex-wrap: wrap; gap: 1rem; }
+  .nav-cta { display: none; }
+  .nav-toggle { display: flex; order: 3; }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    order: 4;
+    padding: .75rem 0 1rem;
+    gap: .125rem;
+  }
+  .nav-links--open { display: flex; }
+  .nav-link { padding: .625rem .5rem; font-size: 1rem; }
+
+  /* Hero */
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .hero-visual { order: -1; }
+  .visual-stack { height: 220px; }
+  .visual-card--a { width: 180px; top: 0; }
+  .visual-card--b { width: 170px; right: 0; top: 40px; }
+  .visual-card--c { width: 165px; bottom: 0; left: 10px; }
+
+  /* Grids */
+  .expertise-grid { grid-template-columns: 1fr; }
+  .metrics-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .project-preview-grid { grid-template-columns: 1fr; }
+  .project-grid { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr; }
+  .approach-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+  .skill-groups { grid-template-columns: 1fr; }
+  .beyond-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+  .about-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+  .brings-grid { grid-template-columns: 1fr; }
+  .edu-grid { grid-template-columns: 1fr; }
+  .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
+  .process-steps { grid-template-columns: 1fr; gap: 1.75rem; }
+
+  /* Case study DL */
+  .case-study-row { grid-template-columns: 1fr; gap: .25rem; }
+
+  /* Footer */
+  .footer-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .footer-brand { grid-column: auto; }
+  .footer-social { flex-direction: row; gap: 1.5rem; }
+
+  /* Contact form */
+  .contact-form-wrap { padding: 1.75rem; }
+}
+
+@media (max-width: 480px) {
+  .hero-actions { flex-direction: column; }
+  .btn { width: 100%; justify-content: center; }
+  .cta-row { flex-direction: column; }
+  .cta-row .btn { width: 100%; }
+
+  .visual-card--b { display: none; }
+
+  .metric-card { padding: 1.75rem 1.25rem; }
+
+  .timeline { padding-left: 1.5rem; }
+  .timeline-marker { left: -1.875rem; }
+  .timeline-header { flex-direction: column; gap: .5rem; }
+}
+
+
+
+

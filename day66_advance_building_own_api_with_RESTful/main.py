@@ -104,7 +104,7 @@ with app.app_context():
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return render_template("index_old.html")
 
 
 @app.route('/random', methods=["GET"])
@@ -114,7 +114,7 @@ def get_cafe():
     random_cafe = random.choice(all_cafes)
 
     # Debug: test if DB results are returned
-    #return render_template("index.html", cafe=result)
+    #return render_template("index_old.html", cafe=result)
 
     """ Return Method 1 """
     # return jsonify(cafe={

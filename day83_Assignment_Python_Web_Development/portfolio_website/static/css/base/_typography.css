@@ -1,0 +1,67 @@
+/* ---- Typography ------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  line-height: 1.15;
+  letter-spacing: -.01em;
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.75rem;        /* 12px — meets minimum */
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: .875rem;
+}
+.eyebrow--light { color: rgba(255,255,255,.6); }
+
+.hero-heading {
+  font-size: clamp(2.5rem, 5vw, 4rem);  /* 40px–64px */
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+}
+.hero-heading-em {
+  display: block;
+  color: var(--blue);
+}
+
+.section-heading {
+  font-size: clamp(2rem, 4vw, 2.875rem);  /* 32px–46px */
+  color: var(--ink);
+  margin-bottom: 1.25rem;
+}
+.section-heading--light { color: var(--white); }
+
+.section-subhead {
+  font-size: 1.125rem;   /* 18px */
+  color: var(--slate);
+  line-height: 1.7;
+  /*max-width: 64ch;*/
+}
+
+.page-hero-heading {
+  font-size: clamp(2.25rem, 4.5vw, 3.5rem);  /* 36px–56px */
+  color: var(--ink);
+  margin-bottom: 1.25rem;
+}
+.page-hero-sub {
+  font-size: 1.125rem;  /* 18px */
+  color: var(--slate);
+  line-height: 1.75;
+  max-width: 60ch;
+}
+
+.body-large {
+  font-size: 1.125rem;  /* 18px */
+  line-height: 1.75;
+  color: var(--slate);
+  margin-bottom: 1.25rem;
+}
+.body-text {
+  font-size: 1rem;      /* 16px */
+  line-height: 1.75;
+  color: var(--slate);
+  margin-bottom: 1rem;
+}
+.body-text--light { color: rgba(255,255,255,.8); }

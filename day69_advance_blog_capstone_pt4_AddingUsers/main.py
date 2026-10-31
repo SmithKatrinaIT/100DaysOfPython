@@ -195,7 +195,7 @@ def get_all_posts():
     result = db.session.execute(db.select(BlogPost))
     posts = result.scalars().all()
 
-    return render_template("index.html", all_posts=posts, current_user=current_user)
+    return render_template("index_old.html", all_posts=posts, current_user=current_user)
 
 # TODO: Allow logged-in users to comment on posts
 @app.route("/post/<int:post_id>", methods=["GET", "POST"])

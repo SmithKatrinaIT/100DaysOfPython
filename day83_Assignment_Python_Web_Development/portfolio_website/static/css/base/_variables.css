@@ -1,0 +1,30 @@
+:root {
+  /* Colors */
+  --ink:        #101828;
+  --slate:      #344054;
+  --muted:      #667085;
+  --canvas:     #F8FAFC;
+  --white:      #FFFFFF;
+  --blue:       #2563EB;
+  --blue-dark:  #1D4ED8;
+  --cyan:       #06B6D4;
+  --border:     #E4E7EC;
+  --shadow-sm:  0 1px 3px rgba(16,24,40,.08), 0 1px 2px rgba(16,24,40,.06);
+  --shadow-md:  0 4px 16px rgba(16,24,40,.10), 0 2px 6px rgba(16,24,40,.06);
+  --shadow-lg:  0 12px 40px rgba(16,24,40,.14);
+
+  /* Typography */
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body:    'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Spacing */
+  --section-gap-lg: 6rem;
+  --section-gap-md: 4rem;
+  --section-gap-sm: 2.5rem;
+
+  /* Layout */
+  --max-width: 1200px;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+}

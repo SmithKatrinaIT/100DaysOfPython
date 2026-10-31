@@ -19,6 +19,14 @@ load_dotenv("../.env")
 # Optional: add contact me email functionality (Day 60)
 # import smtplib
 
+'''
+ ************** NOTE: there is another version of Day 71 that is deployed to the internet using Render  ***************
+ 
+ 	-- The URL to the application: https://one00-days-of-python-publish-website.onrender.com/
+ 	-- The URL to Render Dashboard: https://dashboard.render.com/
+ 	-- Link to Remote Repository: https://github.com/SmithKatrinaIT/100-Days-of-Python---Publish-Website.git
+
+'''
 
 '''
 Make sure the required packages are installed: 
@@ -196,7 +204,7 @@ def logout():
 def get_all_posts():
 	result = db.session.execute(db.select(BlogPost))
 	posts = result.scalars().all()
-	return render_template("index.html", all_posts=posts, current_user=current_user)
+	return render_template("index_old.html", all_posts=posts, current_user=current_user)
 
 
 # Add a POST method to be able to post comments

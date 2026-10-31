@@ -1,0 +1,173 @@
+{% extends "base.html" %}
+
+{% block title %}Katrina Smith | Software Engineer &amp; UI/UX Engineer{% endblock %}
+
+{% block content %}
+
+<!-- Hero -->
+<section class="hero section" aria-labelledby="hero-heading">
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <p class="eyebrow">SOFTWARE ENGINEER &bull; UI/UX &bull; FRONT-END ARCHITECTURE</p>
+      <h1 id="hero-heading" class="hero-heading">
+        Hi, I'm Katrina Smith.<br />
+        <span class="hero-heading-em">I build digital experiences that make complex systems feel simple.</span>
+      </h1>
+      <p class="hero-body">
+        I'm a software engineer specializing in UI/UX engineering, front-end architecture, and enterprise application development. I turn complex business requirements into intuitive, scalable, and maintainable digital solutions—bridging the gap between users, design, and technology.
+      </p>
+      <div class="hero-actions">
+        <a href="{{ url_for('projects') }}" class="btn btn--primary">View My Work</a>
+        <a href="{{ url_for('resume') }}" class="btn btn--secondary">Explore My Resume</a>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <div class="visual-stack">
+        <div class="visual-card visual-card--a">
+          <span class="visual-label">UI/UX</span>
+          <div class="visual-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="visual-bar-group">
+            <div class="visual-bar" style="width:72%"></div>
+            <div class="visual-bar" style="width:48%"></div>
+            <div class="visual-bar" style="width:88%"></div>
+          </div>
+        </div>
+        <div class="visual-card visual-card--b">
+          <span class="visual-label">Engineering</span>
+          <div class="visual-code-lines">
+            <span class="cl cl-blue">&lt;Component</span>
+            <span class="cl cl-muted">&nbsp;&nbsp;aria-label=</span>
+            <span class="cl cl-cyan">&nbsp;&nbsp;"accessible"</span>
+            <span class="cl cl-blue">/&gt;</span>
+          </div>
+        </div>
+        <div class="visual-card visual-card--c">
+          <span class="visual-label">Systems</span>
+          <div class="visual-metrics">
+            <div class="vm"><strong>~50%</strong><span>Efficiency gain</span></div>
+            <div class="vm"><strong>70+</strong><span>Components</span></div>
+          </div>
+        </div>
+        <div class="visual-accent-circle"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Value proposition -->
+<section class="section section--canvas" aria-labelledby="value-heading">
+  <div class="container">
+    <div class="section-intro reveal">
+      <h2 id="value-heading" class="section-heading">Design. Develop. Modernize.</h2>
+      <p class="section-subhead">From intuitive user interfaces to enterprise application architecture, I create solutions that balance user experience, technical performance, security, and long-term maintainability.</p>
+    </div>
+
+    <div class="expertise-grid">
+      <article class="expertise-card reveal" aria-label="UI/UX Engineering expertise">
+        <div class="expertise-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+          </svg>
+        </div>
+        <h3 class="expertise-title">UI/UX Engineering</h3>
+        <p class="expertise-body">Designing intuitive interfaces, reusable UI patterns, prototypes, and accessibility-aware experiences.</p>
+      </article>
+
+      <article class="expertise-card reveal" aria-label="Software Engineering expertise">
+        <div class="expertise-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+          </svg>
+        </div>
+        <h3 class="expertise-title">Software Engineering</h3>
+        <p class="expertise-body">Building scalable applications using modern front-end and back-end technologies.</p>
+      </article>
+
+      <article class="expertise-card reveal" aria-label="Enterprise Modernization expertise">
+        <div class="expertise-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <h3 class="expertise-title">Enterprise Modernization</h3>
+        <p class="expertise-body">Transforming legacy applications and workflows into reliable, observable, maintainable solutions.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Impact metrics -->
+<section class="section section--dark" aria-labelledby="impact-heading">
+  <div class="container">
+    <p class="eyebrow eyebrow--light reveal">SELECTED IMPACT</p>
+    <h2 id="impact-heading" class="section-heading section-heading--light reveal">Work that moves the needle.</h2>
+    <div class="metrics-grid">
+      <div class="metric-card reveal">
+        <span class="metric-number">~50%</span>
+        <p class="metric-label">Reduction in technician task-completion time through application modernization and improved UX.</p>
+      </div>
+      <div class="metric-card reveal">
+        <span class="metric-number">70+</span>
+        <p class="metric-label">Middleware components supported within enterprise operational environments.</p>
+      </div>
+      <div class="metric-card reveal">
+        <span class="metric-number">4</span>
+        <p class="metric-label">Production user interfaces supported across mobile workforce and telemetry operations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured projects preview -->
+<section class="section" aria-labelledby="featured-heading">
+  <div class="container">
+    <div class="section-intro reveal">
+      <p class="eyebrow">FEATURED WORK</p>
+      <h2 id="featured-heading" class="section-heading">Case studies in engineering &amp; design.</h2>
+    </div>
+
+    <div class="project-preview-grid">
+      <article class="project-preview-card reveal">
+        <div class="project-preview-tag">Enterprise UI / UX Modernization</div>
+        <h3 class="project-preview-title">Workforce &amp; Telemetry Application Modernization</h3>
+        <p class="project-preview-body">Improved complex technician workflows across workforce and telemetry applications, contributing to an approximately 50% reduction in task-completion time.</p>
+        <div class="project-tags">
+          <span class="tag">UI/UX</span>
+          <span class="tag">Angular</span>
+          <span class="tag">Figma</span>
+          <span class="tag">Observability</span>
+        </div>
+        <a href="{{ url_for('projects') }}" class="project-link" aria-label="View Workforce and Telemetry Modernization case study">View Case Study &rarr;</a>
+      </article>
+
+      <article class="project-preview-card reveal">
+        <div class="project-preview-tag">Front-End Architecture</div>
+        <h3 class="project-preview-title">Modular Widget-Based UI Platform</h3>
+        <p class="project-preview-body">Designed and implemented a widget-based frontend approach using Google Lit and reusable UI patterns to enable modular UI composition and accelerate consistent feature delivery.</p>
+        <div class="project-tags">
+          <span class="tag">Google Lit</span>
+          <span class="tag">Web Components</span>
+          <span class="tag">Design Systems</span>
+        </div>
+        <a href="{{ url_for('projects') }}" class="project-link" aria-label="View Modular Widget-Based UI Platform case study">View Case Study &rarr;</a>
+      </article>
+    </div>
+
+    <div class="cta-row reveal">
+      <a href="{{ url_for('projects') }}" class="btn btn--primary">View All Projects</a>
+    </div>
+  </div>
+</section>
+
+<!-- Closing CTA -->
+<section class="section section--canvas closing-cta" aria-labelledby="closing-heading">
+  <div class="container closing-inner reveal">
+    <h2 id="closing-heading" class="closing-heading">Building better experiences from the interface to production.</h2>
+    <a href="{{ url_for('projects') }}" class="btn btn--primary">Explore Projects</a>
+  </div>
+</section>
+
+{% endblock %}

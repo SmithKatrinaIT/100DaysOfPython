@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% set active_project = "morse_code" %}
+{% block title %}Morse Code Converter | Katrina Smith{% endblock %}
+{% block meta_desc %}Portfolio case studies in UI/UX engineering, front-end architecture, enterprise application modernization, and full-stack development.{% endblock %}
+
+{% block content %}
+
+<section class="section interactive-project">
+    <div class="container">
+
+        <!-- Project Header -->
+        <header class="interactive-project__header">
+            <p class="eyebrow">PYTHON / FLASK PROJECT </p>
+
+            <h1 class="interactive-project__title"> Morse Code Converter</h1>
+
+            <p class="interactive-project__lead">
+                Convert standard text to Morse code or decode
+                Morse code back into readable text.
+            </p>
+
+            <div class="project-tags mt-3">
+                <span class="tag">Python</span>
+                <span class="tag">Flask</span>
+                <span class="tag">WTForms</span>
+                <span class="tag">Jinja</span>
+                <span class="tag">Bootstrap 5</span>
+            </div>
+        </header>
+
+        <div class="interactive-project__layout">
+
+            <!-- Reusable Project Navigation -->
+            <div class="interactive-project__sidebar">
+                {% set active_project = "morse" %}
+                {% include"components/interactive_project_nav.html" %}
+            </div>
+
+            <!-- Morse Code Project Application -->
+            <main class="interactive-project__workspace">
+                <div class="interactive-project__panel">
+                    <div class="interactive-project__panel-header">
+                        <div>
+                            <p class="interactive-project__panel-label">LIVE DEMO</p>
+                            <h2>Try the Converter</h2>
+                        </div>
+                        <span class="interactive-project__status">Interactive</span>
+                    </div>
+
+                    <form class-="morse-code-form" method="POST">
+                        {{ form.hidden_tag() }}
+
+                        <!-- Conversion Type -->
+                        <div class="mb-4">
+                            {{ form.conversion_type.label( class="form-label fw-semibold" ) }}
+                            {{ form.conversion_type(  class="form-select"  ) }}
+                        </div>
+
+                        <!-- Message -->
+                        <div class="mb-4">
+
+                            {{ form.message.label( class="form-label fw-semibold" ) }}
+                            {{ form.message( class="form-textarea", rows="6", placeholder="Enter text to convert..." ) }}
+
+                            {% for error in form.message.errors %}
+                                <div class="text-danger small mt-2">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+                        {{ form.submit( class="btn btn--primary btn--normal"  )  }}
+                    </form>
+
+                    {% if result %}
+                        <div id="conversion-result" class="interactive-project__result" >
+                            <p class="interactive-project__result-label">CONVERSION RESULT </p>
+                            <div class="interactive-project__result-value">
+                                <code>{{ result }}</code>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </main>
+        </div>
+    </div>
+</section>
+
+
+
+
+    {% block scripts %}
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const conversionType = document.getElementById("conversion_type");
+            const messageField = document.getElementById("message");
+            const resultArea = document.getElementById("conversion-result");
+
+            conversionType.addEventListener("change", function () {
+
+                // Clear textarea
+                messageField.value = "";
+
+                // Clear/hide previous conversion result
+                if (resultArea) {
+                    resultArea.innerHTML = "";
+                    resultArea.classList.add("d-none");
+                }
+
+                // Put cursor back into textarea
+                messageField.focus();
+            });
+
+        });
+    </script>
+    {% endblock %}
+
+{% endblock %}

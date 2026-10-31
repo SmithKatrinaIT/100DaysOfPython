@@ -96,7 +96,7 @@ def home():
 	db.session.connection()
 	all_books_in_db = Book.query.order_by(Book.author).all()
 
-	return render_template("index.html", books=all_books, books_db=all_books_in_db)
+	return render_template("index_old.html", books=all_books, books_db=all_books_in_db)
 
 
 @app.route('/add', methods=['GET', 'POST'])

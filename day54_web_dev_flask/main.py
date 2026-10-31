@@ -20,7 +20,7 @@
 
 		--Flask documentation: https://flask.palletsprojects.com/en/stable/
 		    -- Create the development server by setting the FLASK_APP environment variable:
-		    -- Point the file (code) to the FLASK_APP: `export FLASK_APP=main.py`
+		    -- Point the file (code) to the FLASK_APP: `export FLASK_APP=pandas_concept.py`
 		        -- NOTE: MAKE SURE TO RUN/CREATE THE FLASK_APP in the right directory if working with multiple files and directories in your IDE
 		    -- In the terminal run the command: flask run to start up the server
 
